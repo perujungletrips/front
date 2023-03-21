@@ -10,7 +10,7 @@ type Props = {
 };
 
 const Carousel: React.FC<Props> = ({ width, height, items }) => {
-  const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [activeIndex, setActiveIndex] = useState<number>(items.length-1);
   
   function handleNextItemBtn(){
     setActiveIndex((prev)=>{
