@@ -27,6 +27,30 @@ const images = [
     height={533}
     className='h-full w-full' 
   />,
+  <Image
+    src={'/img_4.jpg'}
+    key={'img_4'}
+    alt={'img_4'}
+    width={800}
+    height={533}
+    className='h-full w-full' 
+  />,
+  <Image
+    src={'/img_5.jpg'}
+    key={'img_5'}
+    alt={'img_5'}
+    width={800}
+    height={533}
+    className='h-full w-full' 
+  />,
+  <Image
+    src={'/img_6.jpg'}
+    key={'img_6'}
+    alt={'img_6'}
+    width={800}
+    height={533}
+    className='h-full w-full' 
+  />,
 ]
 
 export default function tour_example() {

@@ -12,9 +12,9 @@ function CarouselItem({children, index, activeIndex}: CardProps) {
   const absOffset = Math.abs(offset);
 
   const cssTransformProperties = `
-    rotateY(calc(   ${offset}    * 55deg))
+    rotateY(calc(   ${offset}    * -55deg))
     scaleY(calc(1 + ${absOffset} * (-0.5)))
-    translateX(calc(${direction} * (-3rem)))
+    translateX(calc(${direction} * (3rem)))
     translateZ(calc(${absOffset} * (-35rem)))
   `;
   
