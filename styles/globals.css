@@ -4,7 +4,7 @@
 
 @layer components{
   .carousel-container{
-    @apply relative h-32 w-11/12 sm:w-4/6 sm:h-40 md:h-56 lg:h-72 lg:w-3/6;
+    @apply relative h-32 w-11/12 sm:w-4/6 sm:h-40 md:h-56 lg:h-96 lg:w-4/6;
     perspective: 450px;
     transform-style: preserve-3d;
   }
@@ -15,10 +15,10 @@
     @apply absolute z-40 flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border-2 border-[#302e30] bg-[#181818] text-2xl opacity-90 transition duration-300 hover:opacity-100 sm:opacity-75 md:h-12 md:w-12 text-white;
   }
   .carousel-btn-switch-card-left{
-    @apply -left-20 right-auto top-1/2 translate-x-[0px] translate-y-[-50%] transform sm:left-auto sm:right-1/2 sm:translate-x-[-250px] md:translate-x-[-300px] lg:translate-x-[-350px];
+    @apply -left-20 right-auto top-1/2 translate-x-[0px] translate-y-[-50%] transform sm:left-auto sm:right-1/2 sm:translate-x-[-250px] md:translate-x-[-300px] lg:translate-x-[-500px];
   }
   .carousel-btn-switch-card-right{
-    @apply -right-20 left-auto top-1/2 translate-x-[0px] translate-y-[-50%] transform sm:right-auto sm:left-1/2 sm:translate-x-[250px] md:translate-x-[300px] lg:translate-x-[350px];
+    @apply -right-20 left-auto top-1/2 translate-x-[0px] translate-y-[-50%] transform sm:right-auto sm:left-1/2 sm:translate-x-[250px] md:translate-x-[300px] lg:translate-x-[500px];
   }
   .carousel-indicator-container{
     @apply absolute left-1/2 -bottom-8 flex h-5 w-24 -translate-x-1/2 transform items-center justify-center space-x-1 md:-bottom-10;

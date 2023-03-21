@@ -15,12 +15,11 @@ function CarouselIndicator({activeIndex, length, maxindicatorVisible = 5, onChan
       className='carousel-indicator-container'
     >
       {Array.from(Array(maxIndicator), (_, index) => {
-        const pos = maxIndicator-index-1
         return(
           <div 
-            key={pos}
-            className={`carousel-indicator-dots ${activeIndex === pos ? 'w-4 opacity-100': 'w-2 bg-gray-400'}`}
-            onClick={() => onChange(pos)}
+            key={index}
+            className={`carousel-indicator-dots ${activeIndex === index ? 'w-4 opacity-100': 'w-2 bg-gray-400'}`}
+            onClick={() => onChange(index)}
           />
         )
       })}
