@@ -3,54 +3,12 @@ import Head from 'next/head'
 import Image from 'next/image'
 
 const images = [
-  <Image
-    src={'/img_1.jpg'}
-    key={'img_1'}
-    alt={'img_1'}
-    width={800}
-    height={533}
-    className='h-full w-full' 
-  />,
-  <Image
-    src={'/img_2.jpg'}
-    key={'img_2'}
-    alt={'img_2'}
-    width={800}
-    height={533}
-    className='h-full w-full' 
-  />,
-  <Image
-    src={'/img_3.jpg'}
-    key={'img_3'}
-    alt={'img_3'}
-    width={800}
-    height={533}
-    className='h-full w-full' 
-  />,
-  <Image
-    src={'/img_4.jpg'}
-    key={'img_4'}
-    alt={'img_4'}
-    width={800}
-    height={533}
-    className='h-full w-full' 
-  />,
-  <Image
-    src={'/img_5.jpg'}
-    key={'img_5'}
-    alt={'img_5'}
-    width={800}
-    height={533}
-    className='h-full w-full' 
-  />,
-  <Image
-    src={'/img_6.jpg'}
-    key={'img_6'}
-    alt={'img_6'}
-    width={800}
-    height={533}
-    className='h-full w-full' 
-  />,
+  '/img_1.jpg',
+  '/img_1.jpg',
+  '/img_1.jpg',
+  '/img_1.jpg',
+  '/img_1.jpg',
+  '/img_1.jpg',
 ]
 
 export default function tour_example() {
@@ -67,8 +25,20 @@ export default function tour_example() {
           <h1 className="text-3xl font-bold underline">
             Hello world!
           </h1>
-          <div className='flex w-full flex-1 flex-col items-center justify-center px-20 text-center'>
-            <Carousel items={images} />
+          <div className='max-w-3xl m-auto'>
+            <Carousel
+              autoSlide={true}
+              items={images.map((image_url, index) => 
+                <Image
+                  src={image_url}
+                  key={index}
+                  alt={'image'}
+                  width={800}
+                  height={533}
+                  className='h-full w-full'
+                />
+              )} 
+            />
           </div>
         </div>
       </main>

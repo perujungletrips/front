@@ -11,18 +11,18 @@ function CarouselIndicator({activeIndex, length, maxindicatorVisible = 5, onChan
   const maxIndicator = length > maxindicatorVisible ? maxindicatorVisible : length;
 
   return (
-    <div
-      className='carousel-indicator-container'
-    >
-      {Array.from(Array(maxIndicator), (_, index) => {
-        return(
-          <div 
-            key={index}
-            className={`carousel-indicator-dots ${activeIndex === index ? 'w-4 opacity-100': 'w-2 bg-gray-400'}`}
-            onClick={() => onChange(index)}
-          />
-        )
-      })}
+    <div className='absolute bottom-4 right-0 left-0'>
+      <div className='flex items-center justify-center gap-2'>
+        {Array.from(Array(maxIndicator), (_, index) => {
+          return(
+            <div 
+              key={index}
+              className={`transition-all w-3 h-3 bg-white rounded-full cursor-pointer duration-1000 ${activeIndex === index ? 'w-6': 'bg-opacity-50'}`}
+              onClick={() => onChange(index)}
+            />
+          )
+        })}
+      </div>
     </div>
   )
 }
