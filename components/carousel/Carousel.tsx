@@ -26,7 +26,7 @@ const Carousel: React.FC<Props> = ({ items, autoSlide=false, autoSlideInterval=5
     if(!autoSlide) return;
     const slideInterval = setInterval(handleNextItemBtn, autoSlideInterval)
     return () => clearInterval(slideInterval) 
-  }, [])
+  }, [autoSlide, autoSlideInterval])
   
   return (
     <div className="overflow-hidden relative">
@@ -40,12 +40,14 @@ const Carousel: React.FC<Props> = ({ items, autoSlide=false, autoSlideInterval=5
         <button
           onClick={handlePrevItemBtn}
           className="p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white "
+          aria-label="prev button"
         >
           <IoChevronBack />
         </button>
         <button
           onClick={handleNextItemBtn}
           className="p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white"
+          aria-label="next button"
         >
           <IoChevronBack style={{rotate:'180deg'}}/>
         </button>
