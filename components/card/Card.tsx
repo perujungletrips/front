@@ -19,7 +19,7 @@ const Card:React.FC<Props> = ({imgUrl}) => {
       />
       <div className="flex flex-col justify-between p-6 px-10 leading-normal">
           <h1 className="mb-2 text-4xl font-bold tracking-tight">Salkantay 4D</h1>
-          <h3 className='mb-2 text-2xl'>$250.00</h3>
+          <span className='mb-2 text-2xl'>$250.00</span>
           <p className='text-normal'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis voluptatibus vero velit facere modi nisi, expedita sed tempora voluptates sapiente quibusdam fuga tenetur! Nemo labore eius ducimus quo? Delectus, laboriosam?</p>
           <ul role="list" className="space-y-3 my-7">
             <li className="flex space-x-3">
