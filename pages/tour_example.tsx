@@ -23,7 +23,7 @@ export default function tour_example() {
       </Head>
       <main>
         <div className=''>
-          <div className='max-w-6xl m-auto my-10 overflow-hidden'>
+          <div className='max-w-6xl m-auto md:my-10 overflow-hidden'>
             <Card imgUrl='/salkantay.png'/>
           </div>
           <div className='max-w-3xl m-auto'>
