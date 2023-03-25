@@ -1,3 +1,4 @@
+import Card from '@/components/card/Card'
 import Carousel from '@/components/carousel/Carousel'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -21,10 +22,10 @@ export default function tour_example() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div>
-          <h1 className="text-3xl font-bold underline">
-            Hello world!
-          </h1>
+        <div className=''>
+          <div className='max-w-6xl m-auto my-10 overflow-hidden'>
+            <Card imgUrl='/salkantay.png'/>
+          </div>
           <div className='max-w-3xl m-auto'>
             <Carousel
               autoSlide={true}
