@@ -170,7 +170,7 @@ export default function tour_example() {
               </div>
               <div className='' id='Gallery'>
                 <h2 className='text-4xl mb-10 px-10 md:px-0'>Gallery</h2>
-                <div className="w-full h-72 lg:h-[32rem] border-2">
+                <div className="w-full h-72 lg:h-[32rem]">
                   <Carousel
                     autoSlide={false}
                     items={images.map((image_url, index) => 
