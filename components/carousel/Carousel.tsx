@@ -29,13 +29,16 @@ const Carousel: React.FC<Props> = ({ items, autoSlide=false, autoSlideInterval=5
   }, [autoSlide, autoSlideInterval])
   
   return (
-    <div className="overflow-hidden relative">
-      <div 
-        className="flex transition-transform ease-out duration-1000" 
-        style={{transform:`translateX(-${activeIndex*100}%)`}}
-      >
-        {items}
-      </div>
+    <div className="overflow-hidden relative w-full h-full">
+      
+      {items.map((item, index) => 
+        <div
+          key={index}
+          className = {`absolute top-0 left-0 w-full h-full flex items-center justify-center transition-opacity duration-1000 ${index === activeIndex ? 'opacity-100':'opacity-0'}`}
+        >
+          {item}
+        </div>
+      )}
       <div className="absolute inset-0 flex items-center justify-between p-4 text-3xl">
         <button
           onClick={handlePrevItemBtn}
