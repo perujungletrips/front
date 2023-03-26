@@ -6,11 +6,11 @@ import { IoCheckmarkSharp, IoCloseSharp, IoEllipse } from 'react-icons/io5'
 
 const images = [
   '/img_1.jpg',
-  '/img_1.jpg',
-  '/img_1.jpg',
-  '/img_1.jpg',
-  '/img_1.jpg',
-  '/img_1.jpg',
+  '/img_2.jpg',
+  '/img_3.jpg',
+  '/img_4.jpg',
+  '/img_5.jpg',
+  '/img_6.jpg',
 ];
 const background = '/salkantay.png';
 const title = 'Salkantay 4D';
@@ -72,8 +72,8 @@ export default function tour_example() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className='content'>
-          <div className='max-w-6xl m-auto my-10 overflow-hidden' id='Background'>
+        <div className='content max-w-screen-2xl m-auto'>
+          <div className='my-10 overflow-hidden' id='Background'>
             <Card imgUrl={background}>
               <h1 className="mb-2 text-4xl font-bold tracking-tight">{title}</h1>
               <span className='mb-2 text-2xl'>{`$${price}`}</span>
@@ -98,7 +98,7 @@ export default function tour_example() {
             </Card>
           </div>
 
-          <div className='max-w-6xl m-auto md:flex md:flex-wrap md:justify-between'>
+          <div className='md:flex md:flex-wrap md:justify-between'>
             <div className='h-auto md:w-7/12'>
               <div className='px-10 my-10 md:px-0' id='Itinerary'>
                 <h2 className='text-4xl mb-10'>Itinerary</h2>
@@ -168,21 +168,23 @@ export default function tour_example() {
                   </tbody>
                 </table>
               </div>
-              <div className='max-w-3xl m-auto' id='Gallery'>
+              <div className='' id='Gallery'>
                 <h2 className='text-4xl mb-10 px-10 md:px-0'>Gallery</h2>
-                <Carousel
-                  autoSlide={true}
-                  items={images.map((image_url, index) => 
-                    <Image
-                      src={image_url}
-                      key={index}
-                      alt={'image'}
-                      width={800}
-                      height={533}
-                      className='h-full w-full'
-                    />
-                  )} 
-                />
+                <div className="w-full h-72 lg:h-[32rem] border-2">
+                  <Carousel
+                    autoSlide={false}
+                    items={images.map((image_url, index) => 
+                      <Image
+                        src={image_url}
+                        key={index}
+                        alt={'image'}
+                        width={800}
+                        height={533}
+                        className='h-full object-cover md:w-full'
+                      />
+                    )} 
+                  />
+                </div>
               </div>
             </div>
 
