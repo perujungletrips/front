@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import React from 'react'
-import { TbCircleCheckFilled } from 'react-icons/tb';
 
 type Props = {
   imgUrl: string,
@@ -11,7 +10,7 @@ const Card:React.FC<Props> = ({imgUrl, children}) => {
   return (
     <div className="flex flex-col items-center md:flex-row md:w-full">
       <Image
-        className="object-cover w-full h-96 md:h-auto md:w-1/2" 
+        className="object-cover w-full h-96 md:h-auto md:w-1/2 xl:w-7/12" 
         src={imgUrl} 
         alt="background image"
         width={1000}

@@ -2,7 +2,8 @@ import Card from '@/components/card/Card'
 import Carousel from '@/components/carousel/Carousel'
 import Head from 'next/head'
 import Image from 'next/image'
-import { IoCheckmarkSharp, IoCloseSharp, IoEllipse } from 'react-icons/io5'
+import { Link } from 'react-scroll'
+import { IoCheckmarkSharp, IoCloseSharp } from 'react-icons/io5'
 
 const images = [
   '/img_1.jpg',
@@ -75,7 +76,7 @@ export default function tour_example() {
         <div className='content max-w-6xl lg:max-w-screen-2xl m-auto'>
           <div className='my-10 overflow-hidden' id='Background'>
             <Card imgUrl={background}>
-              <h1 className="mb-2 text-4xl font-bold tracking-tight">{title}</h1>
+              <h1 className="mb-2 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">{title}</h1>
               <span className='mb-2 text-2xl'>{`$${price}`}</span>
               <p className='text-normal'>{description}</p>
               <ul role="list" className="space-y-3 my-7">
@@ -90,17 +91,57 @@ export default function tour_example() {
                   </li>
                 ))}
               </ul>
-              <a 
-                href='#Booking'
-                type="button" 
-                className="text-white bg-black hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-900 font-medium rounded-full text-sm px-5 py-2.5 inline-flex justify-center w-60 text-center"
-              >Book Now</a>
+              <Link
+                className='cursor-pointer' 
+                to='booking'
+                smooth
+              >
+                <span 
+                  className="text-white bg-black hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-900 font-medium rounded-full text-md px-5 py-2.5 inline-flex justify-center w-60 text-center"
+                >
+                  Book Now
+                </span>
+              </Link>
             </Card>
           </div>
 
           <div className='md:flex md:flex-wrap md:justify-between'>
             <div className='h-auto md:w-7/12'>
-              <div className='ml-10 my-10 2xl:ml-0' id='Itinerary'>
+              <div className='text-center border-b border-gray-200 sticky z-10 top-0 bg-white shadow-2xl shadow-gray-200'>
+                <ul className="flex flex-wrap -mb-px">
+                  <li className="mr-2">
+                    <Link
+                      to='itinerary' 
+                      spy smooth
+                      activeClass='text-black border-black'
+                      className='cursor-pointer inline-block p-4 border-b-2 border-transparent rounded-t-lg text-gray-600 hover:text-black hover:border-black'
+                    >
+                      <span>Itinerary</span>
+                    </Link>
+                  </li>
+                  <li className="mr-2">
+                    <Link
+                      to='details' 
+                      spy smooth
+                      activeClass='text-black border-black'
+                      className='cursor-pointer inline-block p-4 border-b-2 border-transparent rounded-t-lg text-gray-600 hover:text-black hover:border-black'
+                    >
+                      Details
+                    </Link>
+                  </li>
+                  <li className="mr-2">
+                    <Link
+                      to='gallery' 
+                      spy smooth
+                      activeClass='text-black border-black'
+                      className='cursor-pointer inline-block p-4 border-b-2 border-transparent rounded-t-lg text-gray-600 hover:text-black hover:border-black'
+                    >
+                      <span>Gallery</span>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <div className='ml-10 pt-16 2xl:ml-0' id='itinerary'>
                 <h2 className='text-4xl mb-10'>Itinerary</h2>
                 <ol className='relative border-l border-gray-400'>
                   {
@@ -114,7 +155,7 @@ export default function tour_example() {
                   }
                 </ol>
               </div>
-              <div className="ml-10 my-10 2xl:ml-0" id='Details'>
+              <div className="ml-10 pt-16 2xl:ml-0" id='details'>
                 <h2 className='text-4xl mb-10'>Details</h2>
                 <table className="w-full text-sm text-left">
                   <tbody>
@@ -168,7 +209,7 @@ export default function tour_example() {
                   </tbody>
                 </table>
               </div>
-              <div className='' id='Gallery'>
+              <div className='pt-16' id='gallery'>
                 <h2 className='text-4xl mb-10 ml-10 2xl:ml-0'>Gallery</h2>
                 <div className="w-full h-72 lg:h-[32rem]">
                   <Carousel
@@ -188,7 +229,7 @@ export default function tour_example() {
               </div>
             </div>
 
-            <div className='bg-black h-72 my-10 static md:w-1/3 md:sticky md:top-0' id='Booking'>
+            <div className='bg-black h-screen my-10 static md:w-1/3 md:sticky md:top-0' id='booking'>
 
             </div>
           </div>
