@@ -72,7 +72,7 @@ export default function tour_example() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className='content max-w-screen-2xl m-auto'>
+        <div className='content max-w-6xl lg:max-w-screen-2xl m-auto'>
           <div className='my-10 overflow-hidden' id='Background'>
             <Card imgUrl={background}>
               <h1 className="mb-2 text-4xl font-bold tracking-tight">{title}</h1>
@@ -100,7 +100,7 @@ export default function tour_example() {
 
           <div className='md:flex md:flex-wrap md:justify-between'>
             <div className='h-auto md:w-7/12'>
-              <div className='px-10 my-10 md:px-0' id='Itinerary'>
+              <div className='ml-10 my-10 2xl:ml-0' id='Itinerary'>
                 <h2 className='text-4xl mb-10'>Itinerary</h2>
                 <ol className='relative border-l border-gray-400'>
                   {
@@ -114,7 +114,7 @@ export default function tour_example() {
                   }
                 </ol>
               </div>
-              <div className="px-10 my-10 md:px-0" id='Details'>
+              <div className="ml-10 my-10 2xl:ml-0" id='Details'>
                 <h2 className='text-4xl mb-10'>Details</h2>
                 <table className="w-full text-sm text-left">
                   <tbody>
@@ -169,7 +169,7 @@ export default function tour_example() {
                 </table>
               </div>
               <div className='' id='Gallery'>
-                <h2 className='text-4xl mb-10 px-10 md:px-0'>Gallery</h2>
+                <h2 className='text-4xl mb-10 ml-10 2xl:ml-0'>Gallery</h2>
                 <div className="w-full h-72 lg:h-[32rem]">
                   <Carousel
                     autoSlide={false}
