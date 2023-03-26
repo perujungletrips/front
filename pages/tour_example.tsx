@@ -75,7 +75,7 @@ export default function tour_example() {
         <div className='content max-w-6xl lg:max-w-screen-2xl m-auto'>
           <div className='my-10 overflow-hidden' id='Background'>
             <Card imgUrl={background}>
-              <h1 className="mb-2 text-4xl font-bold tracking-tight">{title}</h1>
+              <h1 className="mb-2 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">{title}</h1>
               <span className='mb-2 text-2xl'>{`$${price}`}</span>
               <p className='text-normal'>{description}</p>
               <ul role="list" className="space-y-3 my-7">
@@ -93,7 +93,7 @@ export default function tour_example() {
               <a 
                 href='#Booking'
                 type="button" 
-                className="text-white bg-black hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-900 font-medium rounded-full text-sm px-5 py-2.5 inline-flex justify-center w-60 text-center"
+                className="text-white bg-black hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-900 font-medium rounded-full text-md px-5 py-2.5 inline-flex justify-center w-60 text-center"
               >Book Now</a>
             </Card>
           </div>
