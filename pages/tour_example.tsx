@@ -2,7 +2,7 @@ import Card from '@/components/card/Card'
 import Carousel from '@/components/carousel/Carousel'
 import Head from 'next/head'
 import Image from 'next/image'
-import { TbCircleCheckFilled } from 'react-icons/tb'
+import { IoCheckmarkSharp, IoCloseSharp } from 'react-icons/io5'
 
 const images = [
   '/img_1.jpg',
@@ -39,6 +39,28 @@ const itinerary = [
     content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum molestiae natus, adipisci ipsa obcaecati ab architecto nulla soluta culpa, ullam nisi optio provident quis deleniti delectus velit maiores? Odit, optio?'
   }
 ]
+const details = {
+  included: ['transportation', 'Acomodations', 'Food & Drink'],
+  notIncluded: ['Transportation', 'Drinks', 'Sleeping bag'],
+  others: [
+    {
+      title: 'Departure location',
+      description: 'Cusco'
+    },
+    {
+      title: 'Departure time',
+      description: '5:00 AM'
+    },
+    {
+      title: 'Return location',
+      description: 'Cusco'
+    },
+    {
+      title: 'Return time',
+      description: '5:00 PM'
+    }
+  ]
+}
 
 export default function tour_example() {
   return (
@@ -59,22 +81,14 @@ export default function tour_example() {
               <ul role="list" className="space-y-3 my-7">
                 {includes.map((include, index) => (
                   <li className="flex space-x-3" key={index}>
-                    <TbCircleCheckFilled 
-                      className='flex-shrink-0 w-6 h-6' 
+                    <IoCheckmarkSharp 
+                      className='flex-shrink-0 w-5 h-5' 
                       aria-label='check icon'
                       aria-hidden='true'
                     />
                     <span className="text-base font-normal leading-tight">{include}</span>
                   </li>
                 ))}
-                {/*<li className="flex space-x-3 line-through decoration-gray-500">
-                  <TbCircleCheckFilled 
-                    className='flex-shrink-0 w-6 h-6 dark:text-gray-500' 
-                    aria-label='check icon'
-                    aria-hidden='true'
-                  />
-                  <span className="text-base font-normal leading-tight text-gray-500">24×7 phone & email support</span>
-                </li>*/}
               </ul>
               <a 
                 href='#Booking'
@@ -100,6 +114,60 @@ export default function tour_example() {
                   ))
                 }
               </div>
+              <div className="max-w-6xl m-auto my-10" id='Details'>
+                <h2 className='text-4xl mb-10'>Details</h2>
+                <table className="w-full text-sm text-left">
+                  <tbody>
+                    { details.others.map( (detail, index) => (
+                      <tr className='border-b border-t' key={index}>
+                        <th scope='row' className='px-6 py-4'>
+                          {detail.title}
+                        </th>
+                        <td className='px-6 py-4'>
+                          {detail.description}
+                        </td>
+                      </tr>
+                    ))}
+                    <tr className='border-b border-t'>
+                      <th scope='row' className='px-6 py-4'>
+                        Included
+                      </th>
+                      <td className='px-6 py-4'>
+                        <ul className='space-y-1 list-inside '>
+                          { details.included.map((include, index) =>
+                            <li className='flex items-center' key={index}>
+                              <IoCheckmarkSharp 
+                                className='text-green-500 w-4 h-4 mr-1.5'
+                                aria-label='check icon'
+                                aria-hidden='true'
+                              />
+                              {include}
+                            </li>
+                          )}
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr className='border-b border-t'>
+                      <th scope='row' className='px-6 py-4'>
+                        Not Included
+                      </th>
+                      <td className='px-6 py-4'>
+                        <ul className='space-y-1 list-inside '>
+                          { details.notIncluded.map((notInclude, index) =>
+                            <li className='flex items-center' key={index}>
+                              <IoCloseSharp
+                                className='text-red-400 w-4 h-4 mr-1.5'
+                                aria-label='check icon'
+                                aria-hidden='true'/>
+                              {notInclude} 
+                            </li>
+                          )}
+                        </ul>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
               <div className='max-w-3xl m-auto' id='Gallery'>
                 <h2 className='text-4xl mb-10'>Gallery</h2>
                 <Carousel
@@ -117,6 +185,7 @@ export default function tour_example() {
                 />
               </div>
             </div>
+
             <div className='bg-black h-72 my-10 static md:w-1/3 md:sticky md:top-0' id='Booking'>
 
             </div>
