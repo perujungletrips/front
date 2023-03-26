@@ -2,7 +2,7 @@ import Card from '@/components/card/Card'
 import Carousel from '@/components/carousel/Carousel'
 import Head from 'next/head'
 import Image from 'next/image'
-import { IoCheckmarkSharp, IoCloseSharp } from 'react-icons/io5'
+import { IoCheckmarkSharp, IoCloseSharp, IoEllipse } from 'react-icons/io5'
 
 const images = [
   '/img_1.jpg',
@@ -73,7 +73,7 @@ export default function tour_example() {
       </Head>
       <main>
         <div className='content'>
-          <div className='max-w-6xl m-auto md:my-10 overflow-hidden' id='Background'>
+          <div className='max-w-6xl m-auto my-10 overflow-hidden' id='Background'>
             <Card imgUrl={background}>
               <h1 className="mb-2 text-4xl font-bold tracking-tight">{title}</h1>
               <span className='mb-2 text-2xl'>{`$${price}`}</span>
@@ -99,40 +99,40 @@ export default function tour_example() {
           </div>
 
           <div className='max-w-6xl m-auto md:flex md:flex-wrap md:justify-between'>
-            <div className='h-auto my-10 md:w-7/12'>
-              <div className='' id='Itinerary'>
+            <div className='h-auto md:w-7/12'>
+              <div className='px-10 my-10 md:px-0' id='Itinerary'>
                 <h2 className='text-4xl mb-10'>Itinerary</h2>
-                {
-                  itinerary.map((day, index) => (
-                    <div className='md:my-10' key={index}>
-                      <div className='flex justify-start items-center my-4'>
-                        <div className='w-12 h-0 border-b-2 border-gray-500 mr-2'/>
+                <ol className='relative border-l border-gray-400'>
+                  {
+                    itinerary.map((day, index) => (
+                      <li className='mb-10 ml-6' key={index}>
+                        <div className="absolute w-3 h-3 bg-gray-400 rounded-full mt-1.5 -left-1.5 border border-white"></div>
                         <h3 className='text-2xl font-bold'>{day.title}</h3>
-                      </div>
-                      <p>{day.content}</p>
-                    </div>
-                  ))
-                }
+                        <p>{day.content}</p>
+                      </li>
+                    ))
+                  }
+                </ol>
               </div>
-              <div className="max-w-6xl m-auto my-10" id='Details'>
+              <div className="px-10 my-10 md:px-0" id='Details'>
                 <h2 className='text-4xl mb-10'>Details</h2>
                 <table className="w-full text-sm text-left">
                   <tbody>
                     { details.others.map( (detail, index) => (
                       <tr className='border-b border-t' key={index}>
-                        <th scope='row' className='px-6 py-4'>
+                        <th scope='row' className='py-4'>
                           {detail.title}
                         </th>
-                        <td className='px-6 py-4'>
+                        <td className='px-4 md:px-6 py-4'>
                           {detail.description}
                         </td>
                       </tr>
                     ))}
                     <tr className='border-b border-t'>
-                      <th scope='row' className='px-6 py-4'>
+                      <th scope='row' className='py-4'>
                         Included
                       </th>
-                      <td className='px-6 py-4'>
+                      <td className='px-4 md:px-6 py-4'>
                         <ul className='space-y-1 list-inside '>
                           { details.included.map((include, index) =>
                             <li className='flex items-center' key={index}>
@@ -148,10 +148,10 @@ export default function tour_example() {
                       </td>
                     </tr>
                     <tr className='border-b border-t'>
-                      <th scope='row' className='px-6 py-4'>
+                      <th scope='row' className='py-4'>
                         Not Included
                       </th>
-                      <td className='px-6 py-4'>
+                      <td className='px-4 md:px-6 py-4'>
                         <ul className='space-y-1 list-inside '>
                           { details.notIncluded.map((notInclude, index) =>
                             <li className='flex items-center' key={index}>
@@ -169,7 +169,7 @@ export default function tour_example() {
                 </table>
               </div>
               <div className='max-w-3xl m-auto' id='Gallery'>
-                <h2 className='text-4xl mb-10'>Gallery</h2>
+                <h2 className='text-4xl mb-10 px-10 md:px-0'>Gallery</h2>
                 <Carousel
                   autoSlide={true}
                   items={images.map((image_url, index) => 
