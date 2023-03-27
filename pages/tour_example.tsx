@@ -2,8 +2,10 @@ import Card from '@/components/card/Card'
 import Carousel from '@/components/carousel/Carousel'
 import Head from 'next/head'
 import Image from 'next/image'
-import { Link } from 'react-scroll'
+import { Link, scroller } from 'react-scroll'
 import { IoCheckmarkSharp, IoCloseSharp } from 'react-icons/io5'
+import Tabs from '@/components/tabs/Tabs'
+import CustomTable from '@/components/customTable/CustomTable'
 
 const images = [
   '/img_1.jpg',
@@ -15,7 +17,8 @@ const images = [
 ];
 const background = '/salkantay.png';
 const title = 'Salkantay 4D';
-const price = '250.00';
+const price = 250.00;
+const privatePrice = 250.00;
 const description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis voluptatibus vero velit facere modi nisi, expedita sed tempora voluptates sapiente quibusdam fuga tenetur! Nemo labore eius ducimus quo? Delectus, laboriosam?'
 const includes = [
   'Entrances',
@@ -40,28 +43,32 @@ const itinerary = [
     content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum molestiae natus, adipisci ipsa obcaecati ab architecto nulla soluta culpa, ullam nisi optio provident quis deleniti delectus velit maiores? Odit, optio?'
   }
 ]
-const details = {
-  included: ['transportation', 'Acomodations', 'Food & Drink'],
-  notIncluded: ['Transportation', 'Drinks', 'Sleeping bag'],
-  others: [
-    {
-      title: 'Departure location',
-      description: 'Cusco'
-    },
-    {
-      title: 'Departure time',
-      description: '5:00 AM'
-    },
-    {
-      title: 'Return location',
-      description: 'Cusco'
-    },
-    {
-      title: 'Return time',
-      description: '5:00 PM'
-    }
-  ]
-}
+const details = [
+  {
+    title: 'Departure location',
+    description: 'Cusco'
+  },
+  {
+    title: 'Departure time',
+    description: '5:00 AM'
+  },
+  {
+    title: 'Return location',
+    description: 'Cusco'
+  },
+  {
+    title: 'Return time',
+    description: '5:00 PM'
+  },
+  {
+    title: 'Included',
+    items: [{value: 'transportation', check: true}, {value: 'Acomodations', check: true}, {value: 'Food & Drink', check: true}]
+  },
+  {
+    title: 'Not Included',
+    items: [{value: 'Transportation', check: false}, {value: 'Drinks', check: false}, {value: 'Sleeping bag', check: false}]
+  },
+]
 
 export default function tour_example() {
   return (
@@ -74,7 +81,7 @@ export default function tour_example() {
       </Head>
       <main>
         <div className='content max-w-6xl lg:max-w-screen-2xl m-auto'>
-          <div className='my-10 overflow-hidden' id='Background'>
+          <div className='overflow-hidden' id='Background'>
             <Card imgUrl={background}>
               <h1 className="mb-2 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">{title}</h1>
               <span className='mb-2 text-2xl'>{`$${price}`}</span>
@@ -92,56 +99,22 @@ export default function tour_example() {
                 ))}
               </ul>
               <Link
-                className='cursor-pointer' 
-                to='booking'
-                smooth
+                href='#Booking'
+                to='Booking'
+                smooth hashSpy
+                className="text-white bg-black hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 font-medium rounded-full text-md px-5 py-2.5 mx-5 w-auto text-center"
               >
-                <span 
-                  className="text-white bg-black hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-900 font-medium rounded-full text-md px-5 py-2.5 inline-flex justify-center w-60 text-center"
-                >
-                  Book Now
-                </span>
+                Book Now
               </Link>
             </Card>
           </div>
 
-          <div className='md:flex md:flex-wrap md:justify-between'>
+          <div className='mx-10 md:flex md:flex-wrap md:justify-between 2xl:mx-0'>
             <div className='h-auto md:w-7/12'>
               <div className='text-center border-b border-gray-200 sticky z-10 top-0 bg-white shadow-2xl shadow-gray-200'>
-                <ul className="flex flex-wrap -mb-px">
-                  <li className="mr-2">
-                    <Link
-                      to='itinerary' 
-                      spy smooth
-                      activeClass='text-black border-black'
-                      className='cursor-pointer inline-block p-4 border-b-2 border-transparent rounded-t-lg text-gray-600 hover:text-black hover:border-black'
-                    >
-                      <span>Itinerary</span>
-                    </Link>
-                  </li>
-                  <li className="mr-2">
-                    <Link
-                      to='details' 
-                      spy smooth
-                      activeClass='text-black border-black'
-                      className='cursor-pointer inline-block p-4 border-b-2 border-transparent rounded-t-lg text-gray-600 hover:text-black hover:border-black'
-                    >
-                      Details
-                    </Link>
-                  </li>
-                  <li className="mr-2">
-                    <Link
-                      to='gallery' 
-                      spy smooth
-                      activeClass='text-black border-black'
-                      className='cursor-pointer inline-block p-4 border-b-2 border-transparent rounded-t-lg text-gray-600 hover:text-black hover:border-black'
-                    >
-                      <span>Gallery</span>
-                    </Link>
-                  </li>
-                </ul>
+                <Tabs ids={['Itinerary', 'Details', 'Gallery']}/>
               </div>
-              <div className='ml-10 pt-16 2xl:ml-0' id='itinerary'>
+              <div className='pt-16' id='Itinerary'>
                 <h2 className='text-4xl mb-10'>Itinerary</h2>
                 <ol className='relative border-l border-gray-400'>
                   {
@@ -155,61 +128,11 @@ export default function tour_example() {
                   }
                 </ol>
               </div>
-              <div className="ml-10 pt-16 2xl:ml-0" id='details'>
+              <div className="pt-16" id='Details'>
                 <h2 className='text-4xl mb-10'>Details</h2>
-                <table className="w-full text-sm text-left">
-                  <tbody>
-                    { details.others.map( (detail, index) => (
-                      <tr className='border-b border-t' key={index}>
-                        <th scope='row' className='py-4'>
-                          {detail.title}
-                        </th>
-                        <td className='px-4 md:px-6 py-4'>
-                          {detail.description}
-                        </td>
-                      </tr>
-                    ))}
-                    <tr className='border-b border-t'>
-                      <th scope='row' className='py-4'>
-                        Included
-                      </th>
-                      <td className='px-4 md:px-6 py-4'>
-                        <ul className='space-y-1 list-inside '>
-                          { details.included.map((include, index) =>
-                            <li className='flex items-center' key={index}>
-                              <IoCheckmarkSharp 
-                                className='text-green-500 w-4 h-4 mr-1.5'
-                                aria-label='check icon'
-                                aria-hidden='true'
-                              />
-                              {include}
-                            </li>
-                          )}
-                        </ul>
-                      </td>
-                    </tr>
-                    <tr className='border-b border-t'>
-                      <th scope='row' className='py-4'>
-                        Not Included
-                      </th>
-                      <td className='px-4 md:px-6 py-4'>
-                        <ul className='space-y-1 list-inside '>
-                          { details.notIncluded.map((notInclude, index) =>
-                            <li className='flex items-center' key={index}>
-                              <IoCloseSharp
-                                className='text-red-400 w-4 h-4 mr-1.5'
-                                aria-label='check icon'
-                                aria-hidden='true'/>
-                              {notInclude} 
-                            </li>
-                          )}
-                        </ul>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                <CustomTable rows={details}/>
               </div>
-              <div className='pt-16' id='gallery'>
+              <div className='pt-16' id='Gallery'>
                 <h2 className='text-4xl mb-10 ml-10 2xl:ml-0'>Gallery</h2>
                 <div className="w-full h-72 lg:h-[32rem]">
                   <Carousel
@@ -229,8 +152,8 @@ export default function tour_example() {
               </div>
             </div>
 
-            <div className='bg-black h-screen my-10 static md:w-1/3 md:sticky md:top-0' id='booking'>
-
+            <div className='p-10 md:h-screen static md:w-1/3 md:sticky md:top-0 border-2' id='Booking'>
+              <h3 className='text-2xl text-center font-semibold'>Booking Form</h3>
             </div>
           </div>
         </div>
