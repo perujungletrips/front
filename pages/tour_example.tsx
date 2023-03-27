@@ -2,7 +2,7 @@ import Card from '@/components/card/Card'
 import Carousel from '@/components/carousel/Carousel'
 import Head from 'next/head'
 import Image from 'next/image'
-import { Link } from 'react-scroll'
+import { Link, scroller } from 'react-scroll'
 import { IoCheckmarkSharp, IoCloseSharp } from 'react-icons/io5'
 
 const images = [
@@ -91,17 +91,13 @@ export default function tour_example() {
                   </li>
                 ))}
               </ul>
-              <Link
-                className='cursor-pointer' 
-                to='booking'
-                smooth
+              <button 
+                type='button'
+                className="text-white bg-black hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 font-medium rounded-full text-md px-5 py-2.5 mx-5 w-auto text-center"
+                onClick={() => scroller.scrollTo('Booking', {smooth: true})}
               >
-                <span 
-                  className="text-white bg-black hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-900 font-medium rounded-full text-md px-5 py-2.5 inline-flex justify-center w-60 text-center"
-                >
-                  Book Now
-                </span>
-              </Link>
+                Book Now
+              </button>
             </Card>
           </div>
 
@@ -229,7 +225,7 @@ export default function tour_example() {
               </div>
             </div>
 
-            <div className='bg-black h-screen my-10 static md:w-1/3 md:sticky md:top-0' id='booking'>
+            <div className='bg-black h-screen my-10 static md:w-1/3 md:sticky md:top-0' id='Booking'>
 
             </div>
           </div>
