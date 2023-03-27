@@ -112,9 +112,9 @@ export default function tour_example() {
                   <li className="mr-2">
                     <Link
                       to='itinerary' 
-                      spy smooth
+                      smooth spy
                       activeClass='text-black border-black'
-                      className='cursor-pointer inline-block p-4 border-b-2 border-transparent rounded-t-lg text-gray-600 hover:text-black hover:border-black'
+                      className='cursor-pointer inline-block p-4 border-b-2 rounded-t-lg text-gray-600 hover:text-black hover:border-black'
                     >
                       <span>Itinerary</span>
                     </Link>
@@ -124,7 +124,7 @@ export default function tour_example() {
                       to='details' 
                       spy smooth
                       activeClass='text-black border-black'
-                      className='cursor-pointer inline-block p-4 border-b-2 border-transparent rounded-t-lg text-gray-600 hover:text-black hover:border-black'
+                      className='cursor-pointer inline-block p-4 border-b-2 rounded-t-lg text-gray-600 hover:text-black hover:border-black'
                     >
                       Details
                     </Link>
@@ -134,7 +134,7 @@ export default function tour_example() {
                       to='gallery' 
                       spy smooth
                       activeClass='text-black border-black'
-                      className='cursor-pointer inline-block p-4 border-b-2 border-transparent rounded-t-lg text-gray-600 hover:text-black hover:border-black'
+                      className='cursor-pointer inline-block p-4 border-b-2 rounded-t-lg text-gray-600 hover:text-black hover:border-black'
                     >
                       <span>Gallery</span>
                     </Link>
