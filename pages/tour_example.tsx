@@ -4,6 +4,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Link, scroller } from 'react-scroll'
 import { IoCheckmarkSharp, IoCloseSharp } from 'react-icons/io5'
+import Tabs from '@/components/tabs/Tabs'
 
 const images = [
   '/img_1.jpg',
@@ -104,40 +105,9 @@ export default function tour_example() {
           <div className='md:flex md:flex-wrap md:justify-between'>
             <div className='h-auto md:w-7/12'>
               <div className='text-center border-b border-gray-200 sticky z-10 top-0 bg-white shadow-2xl shadow-gray-200'>
-                <ul className="flex flex-wrap -mb-px">
-                  <li className="mr-2">
-                    <Link
-                      to='itinerary' 
-                      smooth spy
-                      activeClass='text-black border-black'
-                      className='cursor-pointer inline-block p-4 border-b-2 rounded-t-lg text-gray-600 hover:text-black hover:border-black'
-                    >
-                      <span>Itinerary</span>
-                    </Link>
-                  </li>
-                  <li className="mr-2">
-                    <Link
-                      to='details' 
-                      spy smooth
-                      activeClass='text-black border-black'
-                      className='cursor-pointer inline-block p-4 border-b-2 rounded-t-lg text-gray-600 hover:text-black hover:border-black'
-                    >
-                      Details
-                    </Link>
-                  </li>
-                  <li className="mr-2">
-                    <Link
-                      to='gallery' 
-                      spy smooth
-                      activeClass='text-black border-black'
-                      className='cursor-pointer inline-block p-4 border-b-2 rounded-t-lg text-gray-600 hover:text-black hover:border-black'
-                    >
-                      <span>Gallery</span>
-                    </Link>
-                  </li>
-                </ul>
+                <Tabs ids={['Itinerary', 'Details', 'Gallery']}/>
               </div>
-              <div className='ml-10 pt-16 2xl:ml-0' id='itinerary'>
+              <div className='ml-10 pt-16 2xl:ml-0' id='Itinerary'>
                 <h2 className='text-4xl mb-10'>Itinerary</h2>
                 <ol className='relative border-l border-gray-400'>
                   {
@@ -151,7 +121,7 @@ export default function tour_example() {
                   }
                 </ol>
               </div>
-              <div className="ml-10 pt-16 2xl:ml-0" id='details'>
+              <div className="ml-10 pt-16 2xl:ml-0" id='Details'>
                 <h2 className='text-4xl mb-10'>Details</h2>
                 <table className="w-full text-sm text-left">
                   <tbody>
@@ -205,7 +175,7 @@ export default function tour_example() {
                   </tbody>
                 </table>
               </div>
-              <div className='pt-16' id='gallery'>
+              <div className='pt-16' id='Gallery'>
                 <h2 className='text-4xl mb-10 ml-10 2xl:ml-0'>Gallery</h2>
                 <div className="w-full h-72 lg:h-[32rem]">
                   <Carousel
