@@ -75,7 +75,7 @@ export default function tour_example() {
       </Head>
       <main>
         <div className='content max-w-6xl lg:max-w-screen-2xl m-auto'>
-          <div className='my-10 overflow-hidden' id='Background'>
+          <div className='overflow-hidden' id='Background'>
             <Card imgUrl={background}>
               <h1 className="mb-2 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">{title}</h1>
               <span className='mb-2 text-2xl'>{`$${price}`}</span>
@@ -92,22 +92,23 @@ export default function tour_example() {
                   </li>
                 ))}
               </ul>
-              <button 
-                type='button'
+              <Link
+                href='#Booking'
+                to='Booking'
+                smooth hashSpy
                 className="text-white bg-black hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 font-medium rounded-full text-md px-5 py-2.5 mx-5 w-auto text-center"
-                onClick={() => scroller.scrollTo('Booking', {smooth: true})}
               >
                 Book Now
-              </button>
+              </Link>
             </Card>
           </div>
 
-          <div className='md:flex md:flex-wrap md:justify-between'>
+          <div className='mx-10 md:flex md:flex-wrap md:justify-between 2xl:mx-0'>
             <div className='h-auto md:w-7/12'>
               <div className='text-center border-b border-gray-200 sticky z-10 top-0 bg-white shadow-2xl shadow-gray-200'>
                 <Tabs ids={['Itinerary', 'Details', 'Gallery']}/>
               </div>
-              <div className='ml-10 pt-16 2xl:ml-0' id='Itinerary'>
+              <div className='pt-16' id='Itinerary'>
                 <h2 className='text-4xl mb-10'>Itinerary</h2>
                 <ol className='relative border-l border-gray-400'>
                   {
@@ -121,7 +122,7 @@ export default function tour_example() {
                   }
                 </ol>
               </div>
-              <div className="ml-10 pt-16 2xl:ml-0" id='Details'>
+              <div className="pt-16" id='Details'>
                 <h2 className='text-4xl mb-10'>Details</h2>
                 <table className="w-full text-sm text-left">
                   <tbody>
@@ -195,8 +196,8 @@ export default function tour_example() {
               </div>
             </div>
 
-            <div className='bg-black h-screen my-10 static md:w-1/3 md:sticky md:top-0' id='Booking'>
-
+            <div className='p-10 md:h-screen static md:w-1/3 md:sticky md:top-0 border-2' id='Booking'>
+              <h3 className='text-2xl text-center font-semibold'>Booking Form</h3>
             </div>
           </div>
         </div>
