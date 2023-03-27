@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { Link, scroller } from 'react-scroll'
 import { IoCheckmarkSharp, IoCloseSharp } from 'react-icons/io5'
 import Tabs from '@/components/tabs/Tabs'
+import CustomTable from '@/components/customTable/CustomTable'
 
 const images = [
   '/img_1.jpg',
@@ -16,7 +17,8 @@ const images = [
 ];
 const background = '/salkantay.png';
 const title = 'Salkantay 4D';
-const price = '250.00';
+const price = 250.00;
+const privatePrice = 250.00;
 const description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis voluptatibus vero velit facere modi nisi, expedita sed tempora voluptates sapiente quibusdam fuga tenetur! Nemo labore eius ducimus quo? Delectus, laboriosam?'
 const includes = [
   'Entrances',
@@ -41,28 +43,32 @@ const itinerary = [
     content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum molestiae natus, adipisci ipsa obcaecati ab architecto nulla soluta culpa, ullam nisi optio provident quis deleniti delectus velit maiores? Odit, optio?'
   }
 ]
-const details = {
-  included: ['transportation', 'Acomodations', 'Food & Drink'],
-  notIncluded: ['Transportation', 'Drinks', 'Sleeping bag'],
-  others: [
-    {
-      title: 'Departure location',
-      description: 'Cusco'
-    },
-    {
-      title: 'Departure time',
-      description: '5:00 AM'
-    },
-    {
-      title: 'Return location',
-      description: 'Cusco'
-    },
-    {
-      title: 'Return time',
-      description: '5:00 PM'
-    }
-  ]
-}
+const details = [
+  {
+    title: 'Departure location',
+    description: 'Cusco'
+  },
+  {
+    title: 'Departure time',
+    description: '5:00 AM'
+  },
+  {
+    title: 'Return location',
+    description: 'Cusco'
+  },
+  {
+    title: 'Return time',
+    description: '5:00 PM'
+  },
+  {
+    title: 'Included',
+    items: [{value: 'transportation', check: true}, {value: 'Acomodations', check: true}, {value: 'Food & Drink', check: true}]
+  },
+  {
+    title: 'Not Included',
+    items: [{value: 'Transportation', check: false}, {value: 'Drinks', check: false}, {value: 'Sleeping bag', check: false}]
+  },
+]
 
 export default function tour_example() {
   return (
@@ -124,57 +130,7 @@ export default function tour_example() {
               </div>
               <div className="pt-16" id='Details'>
                 <h2 className='text-4xl mb-10'>Details</h2>
-                <table className="w-full text-sm text-left">
-                  <tbody>
-                    { details.others.map( (detail, index) => (
-                      <tr className='border-b border-t' key={index}>
-                        <th scope='row' className='py-4'>
-                          {detail.title}
-                        </th>
-                        <td className='px-4 md:px-6 py-4'>
-                          {detail.description}
-                        </td>
-                      </tr>
-                    ))}
-                    <tr className='border-b border-t'>
-                      <th scope='row' className='py-4'>
-                        Included
-                      </th>
-                      <td className='px-4 md:px-6 py-4'>
-                        <ul className='space-y-1 list-inside '>
-                          { details.included.map((include, index) =>
-                            <li className='flex items-center' key={index}>
-                              <IoCheckmarkSharp 
-                                className='text-green-500 w-4 h-4 mr-1.5'
-                                aria-label='check icon'
-                                aria-hidden='true'
-                              />
-                              {include}
-                            </li>
-                          )}
-                        </ul>
-                      </td>
-                    </tr>
-                    <tr className='border-b border-t'>
-                      <th scope='row' className='py-4'>
-                        Not Included
-                      </th>
-                      <td className='px-4 md:px-6 py-4'>
-                        <ul className='space-y-1 list-inside '>
-                          { details.notIncluded.map((notInclude, index) =>
-                            <li className='flex items-center' key={index}>
-                              <IoCloseSharp
-                                className='text-red-400 w-4 h-4 mr-1.5'
-                                aria-label='check icon'
-                                aria-hidden='true'/>
-                              {notInclude} 
-                            </li>
-                          )}
-                        </ul>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                <CustomTable rows={details}/>
               </div>
               <div className='pt-16' id='Gallery'>
                 <h2 className='text-4xl mb-10 ml-10 2xl:ml-0'>Gallery</h2>
