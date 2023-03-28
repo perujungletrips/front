@@ -2,18 +2,18 @@ import Card from '@/components/card/Card'
 import Carousel from '@/components/carousel/Carousel'
 import Head from 'next/head'
 import Image from 'next/image'
-import { Link, scroller } from 'react-scroll'
-import { IoCheckmarkSharp, IoCloseSharp } from 'react-icons/io5'
+import { Link } from 'react-scroll'
+import { IoCheckmarkSharp } from 'react-icons/io5'
 import Tabs from '@/components/tabs/Tabs'
 import CustomTable from '@/components/customTable/CustomTable'
 
 const images = [
-  '/img_1.jpg',
-  '/img_2.jpg',
-  '/img_3.jpg',
-  '/img_4.jpg',
-  '/img_5.jpg',
-  '/img_6.jpg',
+  'img_1.jpg',
+  'img_2.jpg',
+  'img_3.jpg',
+  'img_4.jpg',
+  'img_5.jpg',
+  'img_6.jpg',
 ];
 const background = '/salkantay.png';
 const title = 'Salkantay 4D';
@@ -136,12 +136,12 @@ export default function tour_example() {
                 <h2 className='text-4xl mb-10 ml-10 2xl:ml-0'>Gallery</h2>
                 <div className="w-full h-72 lg:h-[32rem]">
                   <Carousel
-                    autoSlide={false}
-                    items={images.map((image_url, index) => 
+                    autoSlide
+                    items={images.map((image, index) => 
                       <Image
-                        src={image_url}
+                        src={`/${image}`}
                         key={index}
-                        alt={'image'}
+                        alt={`Slide image: ${image}`}
                         width={800}
                         height={533}
                         className='h-full object-cover md:w-full'
