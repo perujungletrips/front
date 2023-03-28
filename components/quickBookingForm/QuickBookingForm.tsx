@@ -27,8 +27,8 @@ const QuickBookingForm:React.FC<Props> = ({}) => {
   }
 
   return (
-    <div className='border p-10 rounded-md'>
-      <h3 className='text-2xl text-center'>Booking Form</h3>
+    <div className='w-full h-full'>
+      <h3 className='text-2xl text-center font-semibold'>Booking Form</h3>
       <form action="">
         <div className='h-16 flex items-center'>
           <label className='relative inline-flex items-center'>

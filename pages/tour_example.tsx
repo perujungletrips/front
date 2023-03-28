@@ -112,12 +112,12 @@ export default function tour_example() {
             </Card>
           </div>
 
-          <div className='mx-10 md:flex md:flex-wrap md:justify-between 2xl:mx-0'>
+          <div className='md:flex md:flex-wrap md:justify-between 2xl:mx-0'>
             <div className='h-auto md:w-7/12'>
-              <div className='text-center border-b border-gray-200 sticky z-10 top-0 bg-white shadow-2xl shadow-gray-200'>
+              <div className='mx-10 text-center border-b border-gray-200 sticky z-10 top-0 bg-white shadow-2xl shadow-gray-200 2xl:mx-0'>
                 <Tabs ids={['Itinerary', 'Details', 'Gallery']}/>
               </div>
-              <div className='pt-16' id='Itinerary'>
+              <div className='mx-10 pt-16 2xl:mx-0' id='Itinerary'>
                 <h2 className='text-4xl mb-10'>Itinerary</h2>
                 <ol className='relative border-l border-gray-400'>
                   {
@@ -131,11 +131,11 @@ export default function tour_example() {
                   }
                 </ol>
               </div>
-              <div className="pt-16" id='Details'>
+              <div className="mx-10 pt-16 2xl:mx-0" id='Details'>
                 <h2 className='text-4xl mb-10'>Details</h2>
                 <CustomTable rows={details}/>
               </div>
-              <div className='pt-16' id='Gallery'>
+              <div className='pt-16 mx-0' id='Gallery'>
                 <h2 className='text-4xl mb-10 ml-10 2xl:ml-0'>Gallery</h2>
                 <div className="w-full h-72 lg:h-[32rem]">
                   <Carousel
@@ -155,9 +155,17 @@ export default function tour_example() {
               </div>
             </div>
 
-            <div className='static w-full md:p-10 md:h-screen md:w-4/12 md:sticky md:top-0' id='Booking'>
-              <QuickBookingForm />
+            <div className='static w-full md:px-10 md:h-screen md:w-4/12 md:sticky md:top-0' id='Booking'>
+              <div className='mb-10 border px-10 py-6 rounded-md'>
+                <QuickBookingForm />
+              </div>
+              <div className='rounded-md overflow-hidden hidden md:block'>
+              </div>
             </div>
+          </div>
+          
+          <div className='h-96 w-full'>
+
           </div>
         </div>
       </main>
