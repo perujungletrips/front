@@ -6,6 +6,9 @@ import { Link } from 'react-scroll'
 import { IoCheckmarkSharp } from 'react-icons/io5'
 import Tabs from '@/components/tabs/Tabs'
 import CustomTable from '@/components/customTable/CustomTable'
+import QuickBookingForm from '@/components/quickBookingForm/QuickBookingForm'
+
+import 'react-datepicker/dist/react-datepicker.css'
 
 const images = [
   'img_1.jpg',
@@ -153,7 +156,7 @@ export default function tour_example() {
             </div>
 
             <div className='p-10 md:h-screen static md:w-1/3 md:sticky md:top-0 border-2' id='Booking'>
-              <h3 className='text-2xl text-center font-semibold'>Booking Form</h3>
+              <QuickBookingForm />
             </div>
           </div>
         </div>
