@@ -155,7 +155,7 @@ export default function tour_example() {
               </div>
             </div>
 
-            <div className='p-10 md:h-screen static md:w-1/3 md:sticky md:top-0 border-2' id='Booking'>
+            <div className='static w-full md:p-10 md:h-screen md:w-4/12 md:sticky md:top-0' id='Booking'>
               <QuickBookingForm />
             </div>
           </div>
