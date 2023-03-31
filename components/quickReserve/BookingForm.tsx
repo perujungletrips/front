@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import DatePicker from "react-datepicker";
 import { MdCalendarToday, MdGroups } from 'react-icons/md'
 
@@ -14,7 +14,7 @@ const end = new Date(today)
 end.setDate(today.getDate() + 2 + packageLen - 1)
 
 
-const QuickBookingForm:React.FC<Props> = ({}) => {
+const BookingForm:React.FC<Props> = ({}) => {
   const [privateEnable, setPrivateEnable] = useState(false)
   const [startDate, setStartDate] = useState(start)
   const [endDate, setEndDate] = useState(end)
@@ -106,4 +106,4 @@ const QuickBookingForm:React.FC<Props> = ({}) => {
   )
 }
 
-export default QuickBookingForm
+export default BookingForm

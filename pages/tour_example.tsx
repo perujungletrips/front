@@ -6,9 +6,9 @@ import { Link } from 'react-scroll'
 import { IoCheckmarkSharp } from 'react-icons/io5'
 import Tabs from '@/components/tabs/Tabs'
 import CustomTable from '@/components/customTable/CustomTable'
-import QuickBookingForm from '@/components/quickBookingForm/QuickBookingForm'
 
 import 'react-datepicker/dist/react-datepicker.css'
+import QuickReserve from '@/components/quickReserve/QuickReserve'
 
 const images = [
   'img_1.jpg',
@@ -157,7 +157,7 @@ export default function tour_example() {
 
             <div className='static w-full md:px-10 md:h-screen md:w-4/12 md:sticky md:top-0' id='Booking'>
               <div className='mb-10 border px-10 py-6 rounded-md'>
-                <QuickBookingForm />
+                <QuickReserve />
               </div>
               <div className='rounded-md overflow-hidden hidden md:block'>
               </div>
