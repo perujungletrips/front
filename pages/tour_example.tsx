@@ -21,10 +21,7 @@ export default function tour_example() {
   return (
     <>
       <Head>
-        <title>tour</title>
-        <meta name="description" content="Peru Jungle Trips tour" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>Peru Jungle Trips</title>
       </Head>
       <main>
         <div className='content max-w-6xl lg:max-w-screen-2xl m-auto'>
@@ -66,10 +63,6 @@ export default function tour_example() {
                 <QuickReserve />
               </div>
             </div>
-          </div>
-          
-          <div className='h-96 w-full'>
-
           </div>
         </div>
       </main>
