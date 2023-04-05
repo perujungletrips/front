@@ -65,9 +65,7 @@ const BookingForm:React.FC<Props> = ({}) => {
           </select>
         </div>
         <div className='relative flex items-center h-16'>
-          <label htmlFor="Startdate" className='absolute left-2 z-10 mr-2'>
-            <MdCalendarToday/>
-          </label>
+            <MdCalendarToday className='absolute left-2 z-10 mr-2'/>
           <DatePicker
             id='Startdate' 
             selected={startDate} 
@@ -78,6 +76,7 @@ const BookingForm:React.FC<Props> = ({}) => {
             shouldCloseOnSelect={false}
             dateFormat={'MMM dd, yyy'}
             onChange={(date) => changeStartDate(date as Date)}
+            aria-label="Datepicker"
             className={`w-full border-gray-300 cursor-pointer border-2 rounded-lg p-2 pl-10 text-sm focus:outline-none focus:ring-4 focus:ring-blue-300`}
           />
         </div>
