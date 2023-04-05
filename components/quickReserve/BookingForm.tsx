@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import DatePicker from "react-datepicker";
+import React, { forwardRef, useState } from 'react'
+import DatePicker, { ReactDatePickerProps } from "react-datepicker";
 import { MdCalendarToday, MdGroups } from 'react-icons/md'
 
 type Props = {
@@ -66,19 +66,18 @@ const BookingForm:React.FC<Props> = ({}) => {
         </div>
         <div className='relative flex items-center h-16'>
             <MdCalendarToday className='absolute left-2 z-10 mr-2'/>
-          <DatePicker
-            id='Startdate' 
-            selected={startDate} 
-            minDate={start}
-            startDate={startDate}
-            endDate={endDate}
-            yearDropdownItemNumber={1}
-            shouldCloseOnSelect={false}
-            dateFormat={'MMM dd, yyy'}
-            onChange={(date) => changeStartDate(date as Date)}
-            aria-label="Datepicker"
-            className={`w-full border-gray-300 cursor-pointer border-2 rounded-lg p-2 pl-10 text-sm focus:outline-none focus:ring-4 focus:ring-blue-300`}
-          />
+            <DatePicker
+              id='Startdate' 
+              selected={startDate} 
+              minDate={start}
+              startDate={startDate}
+              endDate={endDate}
+              yearDropdownItemNumber={1}
+              shouldCloseOnSelect={false}
+              dateFormat={'MMM dd, yyy'}
+              onChange={(date) => changeStartDate(date as Date)}
+              customInput={React.createElement(React.forwardRef(CustomInput))}
+            />
         </div>
         <div className='flex justify-center items-center h-16'>
           <button 
@@ -93,4 +92,13 @@ const BookingForm:React.FC<Props> = ({}) => {
   )
 }
 
+const CustomInput = (props: React.HTMLProps<HTMLInputElement>, ref: React.Ref<HTMLInputElement>) => {
+  return (
+    <input
+      {...props}
+      className={`w-full border-gray-300 cursor-pointer border-2 rounded-lg p-2 pl-11 text-sm focus:outline-none focus:ring-4 focus:ring-blue-300 text-left`}
+      aria-label='datepicker input'
+    />
+  );
+};
 export default BookingForm
