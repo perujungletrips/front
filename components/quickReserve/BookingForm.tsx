@@ -28,22 +28,8 @@ const BookingForm:React.FC<Props> = ({}) => {
 
   return (
     <div className='w-full h-full'>
-      <h3 className='text-2xl text-center font-semibold'>Booking Form</h3>
+      <h3 className='text-2xl text-center font-semibold mb-8'>Booking Form</h3>
       <form action="">
-        <div className='h-16 flex items-center'>
-          <label className='relative inline-flex items-center'>
-            <input 
-              type="checkbox" 
-              checked={privateEnable} 
-              onChange={()=>setPrivateEnable(!privateEnable)}
-              className="sr-only peer"
-            />
-            <div className={`cursor-pointer w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer
-            after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all
-            peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white`} />
-            <span className={`ml-3 text-sm font-medium transition-all ${privateEnable ? 'text-gray-900':'text-gray-400'}`}>Private</span>
-          </label>
-        </div>
         <div className="relative flex items-center h-16">
           <MdGroups className='absolute left-2 mr-2'/>
           <select 
@@ -79,7 +65,9 @@ const BookingForm:React.FC<Props> = ({}) => {
           </select>
         </div>
         <div className='relative flex items-center h-16'>
-          <MdCalendarToday className='absolute left-2 z-10 mr-2'/>
+          <label htmlFor="Startdate" className='absolute left-2 z-10 mr-2'>
+            <MdCalendarToday/>
+          </label>
           <DatePicker
             id='Startdate' 
             selected={startDate} 
