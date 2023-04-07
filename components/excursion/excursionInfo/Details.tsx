@@ -30,7 +30,7 @@ const details = [
 
 const Details = () => {
   return (
-    <div className="mx-10 pt-16 2xl:mx-0" id='Details'>
+    <div className="mx-10 2xl:mx-0" id='Details'>
       <h2 className='text-4xl mb-10'>Details</h2>
       <CustomTable rows={details}/>
     </div>

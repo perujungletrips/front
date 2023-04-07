@@ -13,7 +13,7 @@ const images = [
 
 const Gallery = () => {
   return (
-    <div className='pt-16 mx-0' id='Gallery'>
+    <div className='mx-0' id='Gallery'>
       <h2 className='text-4xl mb-10 ml-10 2xl:ml-0'>Gallery</h2>
       <div className="w-full h-72 lg:h-[32rem]">
         <Carousel

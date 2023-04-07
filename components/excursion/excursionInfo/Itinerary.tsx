@@ -21,7 +21,7 @@ const itinerary = [
 
 const Itinerary = () => {
   return (
-    <div className='mx-10 pt-16 2xl:mx-0' id='Itinerary'>
+    <div className='mx-10 2xl:mx-0' id='Itinerary'>
       <h2 className='text-4xl mb-10'>Itinerary</h2>
       <ol className='relative border-l border-gray-400'>
         {

@@ -11,13 +11,18 @@ const menu = [
   {title: 'Contact Us'}
 ]
 
-const NavBar = () => {
+interface Props{
+  position?: 'fixed' | 'relative' | 'absolute',
+}
+
+
+const NavBar = ({position='relative'}: Props) => {
   const [active, setActive] = useState(0)
   const [menuClicked, setMenuClicked] = useState(false)
 
   return (
-    <nav className='absolute top-0 w-full bg-transparent'>
-      <div className={`relative w-full max-w-screen-xl flex px-5 items-center md:items-start justify-between
+    <nav className={`w-full top-0 ${position} `}>
+      <div className={`relative w-full max-w-screen-2xl m-auto flex px-5 items-center justify-between
       md:px-10 `}>
         <a href="#" className=' flex items-center'>
           <Image
@@ -28,7 +33,7 @@ const NavBar = () => {
              className='w-auto h-24'
           />
         </a>
-        <div className={`fixed z-40 right-0 top-0 py-10 overflow-hidden ml-auto bg-black/75 backdrop-blur-sm md:backdrop-blur-0 md:relative md:block md:bg-transparent md:w-auto md:h-auto transition-all duration-200 ease-in ${menuClicked? 'w-2/3 h-screen':'w-0 h-0'}`}>
+        <div className={`fixed z-40 right-0 top-0 py-10 overflow-hidden ml-auto bg-black/75 backdrop-blur-sm md:backdrop-blur-0 md:relative md:bg-transparent md:w-auto md:h-auto transition-all duration-200 ease-in ${menuClicked? 'w-2/3 h-screen':'w-0 h-0'}`}>
           <ul className={`text-center flex flex-col md:flex-row md:flex-wrap items-center justify-between font-semibold`}>
             {menu.map((item, index)=>(
               <li className='list-none px-5 py-2' key={index}>
