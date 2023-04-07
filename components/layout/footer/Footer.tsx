@@ -42,7 +42,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className='bg-gray-800 text-center text-sm text-gray-600 font-bold py-2'>
+      <div className='bg-gray-800 text-center text-sm text-gray-200 py-2'>
         &#169; 2023 - Peru Jungle Trips
       </div>
     </div>
