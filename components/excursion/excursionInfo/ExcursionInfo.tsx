@@ -1,5 +1,5 @@
 import React from 'react'
-import Tabs from '../tabs/Tabs'
+import Tabs from './tabs/Tabs'
 import Details from './Details'
 import Gallery from './Gallery'
 import Itinerary from './Itinerary'

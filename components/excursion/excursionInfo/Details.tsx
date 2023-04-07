@@ -1,5 +1,5 @@
 import React from 'react'
-import CustomTable from '../customTable/CustomTable'
+import CustomTable from '../../customTable/CustomTable'
 
 const details = [
   {

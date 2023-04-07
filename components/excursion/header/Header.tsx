@@ -6,7 +6,7 @@ type Props = {
   children: React.ReactNode
 };
 
-const Card:React.FC<Props> = ({imgUrl, children}) => {
+const Header:React.FC<Props> = ({imgUrl, children}) => {
   return (
     <div className="flex flex-col items-center md:flex-row md:w-full">
       <Image
@@ -24,4 +24,4 @@ const Card:React.FC<Props> = ({imgUrl, children}) => {
   )
 }
 
-export default Card
+export default Header

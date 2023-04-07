@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import Carousel from '../carousel/Carousel'
+import Carousel from '../../carousel/Carousel'
 
 const images = [
   'img_1.jpg',
