@@ -25,18 +25,18 @@ const Footer = () => {
           />
         </div>
         <div className='py-10 flex flex-col items-center w-full md:w-1/3 text-xl'>
-          <h6 className='text-3xl mb-4'>Visit our sites</h6>
+          <h6 className='text-3xl mb-4'>Stay Connected</h6>
           <div className='w-full flex felx-row justify-center'>
-            <button type='button' className='mx-2 hover:text-white/80'>
+            <button type='button' className='mx-2 hover:text-white/80' aria-label="Social button">
               <FaInstagram />
             </button>
-            <button type='button' className='mx-2 hover:text-white/80'>
+            <button type='button' className='mx-2 hover:text-white/80' aria-label="Social button">
               <FaFacebook />
             </button>
-            <button type='button' className='mx-2 hover:text-white/80'>
+            <button type='button' className='mx-2 hover:text-white/80' aria-label="Social Google">
               <FaGoogle />
             </button>
-            <button type='button' className='mx-2 hover:text-white/80'>
+            <button type='button' className='mx-2 hover:text-white/80' aria-label="Social TripAdvisor">
               <FaTripadvisor />
             </button>
           </div>
