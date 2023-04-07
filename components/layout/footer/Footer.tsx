@@ -8,7 +8,7 @@ const Footer = () => {
     <div className='w-full bg-gray-900 text-white '>
       <div className='max-w-6xl m-auto flex flex-wrap justify-between items-center'>
         <div className='pt-10 md:py-10 flex flex-col items-center w-full md:w-1/3'>
-          <h6 className='text-3xl mb-4'>Contact Us</h6>
+          <span className='text-3xl mb-4'>Contact Us</span>
           <div>
             <p className='text-sm mb-1'><span className='font-bold'>Address: </span> Procuradores N°385</p>
             <p className='text-sm mb-1'><span className='font-bold'>Phone: </span> +51 924 353 276</p>
@@ -25,7 +25,7 @@ const Footer = () => {
           />
         </div>
         <div className='py-10 flex flex-col items-center w-full md:w-1/3 text-xl'>
-          <h6 className='text-3xl mb-4'>Stay Connected</h6>
+          <span className='text-3xl mb-4'>Stay Connected</span>
           <div className='w-full flex felx-row justify-center'>
             <button type='button' className='mx-2 hover:text-white/80' aria-label="Social button">
               <FaInstagram />
